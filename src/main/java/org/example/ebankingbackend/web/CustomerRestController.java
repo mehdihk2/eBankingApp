@@ -2,6 +2,7 @@ package org.example.ebankingbackend.web;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.example.ebankingbackend.dtos.CustomerDTO;
 import org.example.ebankingbackend.entities.Customer;
 import org.example.ebankingbackend.services.BankAccountService;
 import org.example.ebankingbackend.services.BankAccountServiceImpl;
@@ -18,7 +19,7 @@ public class CustomerRestController {
 
     private BankAccountService bankAccountService;
     @GetMapping("/customers")
-    public List<Customer> customers() {
+    public List<CustomerDTO> customers() {
         return bankAccountService.listCustomer();
     }
 }
